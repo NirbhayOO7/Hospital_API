@@ -3,9 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = 8000;
 const mongoose = require('./config/mongoose');
+const passport = require('passport');
+const passportJwt = require('./config/passport-jwt-auth');
+
+
 
 // middleware used to decode the encrypted data with the help of bodyparser 
 app.use(bodyParser.urlencoded({extended: false}));
+
+// console.log(new Date());
+
+app.use(passport.initialize());
 
 //setting up express router
 app.use('/',require('./routes'));   //it by default fetch up the ./routes/index.js
