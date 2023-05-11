@@ -1,4 +1,4 @@
-# Click on below link to see a short video on how the web auth application looks and how it works.
+# Click on below link to see a short video on how the Hospital API application works.
 https://drive.google.com/file/d/1HPG4wbPpkWtETt2h_NJTPQNFaFhW8RSD/view?usp=share_link
 
 # About repo.
