@@ -11,8 +11,7 @@ const passportJwt = require('./config/passport-jwt-auth');
 // middleware used to decode the encrypted data with the help of bodyparser 
 app.use(bodyParser.urlencoded({extended: false}));
 
-// console.log(new Date());
-
+// initialize passport in our express app. 
 app.use(passport.initialize());
 
 //setting up express router

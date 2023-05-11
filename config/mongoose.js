@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 let db;
 
+// function to connect locally hosted mongodb database on port 27017 and then create a database named Hospital
 main().catch(err => console.log(err));
 async function main() {
     try {

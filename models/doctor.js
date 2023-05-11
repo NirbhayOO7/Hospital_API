@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');   // install bcryptjs to save hashed password in db rather than orginal password.
-// open below link to get more info on bcryptjs usage https://coderrocketfuel.com/article/store-passwords-in-mongodb-with-node-js-mongoose-and-bcrypt
+const bcrypt = require('bcryptjs');  
 
-
-// user schema for holding data about users present in web_auth application 
+// doctor schema for holding data about doctor present in hospital_api application 
 const DoctorSchema = new mongoose.Schema({
     email: {
         type : String,

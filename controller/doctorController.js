@@ -1,6 +1,8 @@
 const Doctor = require('../models/doctor');
 const jwt = require('jsonwebtoken');
+const env = require('../config/environment');
 
+// signup doctor
 module.exports.create = async function(req, res){
     try {
 
@@ -34,6 +36,7 @@ module.exports.create = async function(req, res){
     }
 }
 
+// login doctor using email and password by using jwt 
 module.exports.createSession = async function(req, res){
     try {
         let doc = await Doctor.findOne({email: req.body.email});
@@ -45,7 +48,7 @@ module.exports.createSession = async function(req, res){
                     return res.status(200).json({
                         message: "Sign in successful, here is your token, please keep it safe!",
                         data: {
-                            token : jwt.sign(doc.toJSON(), 'random' , {expiresIn: '1000000'})
+                            token : jwt.sign(doc.toJSON(), env.secretKey , {expiresIn: '1000000'})
                         }
                     });
                 }

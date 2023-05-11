@@ -1,6 +1,7 @@
 const Patient = require('../models/patient');
 const Report = require('../models/report');
 
+// create patient in the database if request is made by authenticated doctor
 module.exports.create = async function(req, res){
     try {
         let pat = await Patient.findOne({phone: req.body.phone});
@@ -26,6 +27,7 @@ module.exports.create = async function(req, res){
     }
 }
 
+// create reports for a specific patient in the database if request is made by authenticated doctor
 module.exports.createReport = async function(req, res){
     try {
         let report = await Report.create({
@@ -51,6 +53,7 @@ module.exports.createReport = async function(req, res){
     }
 }
 
+// get reports for a specific patient in the database if request is made by authenticated doctor
 module.exports.allReports = async function(req, res){
     try {
         let patient = await Patient.findById(req.params.id)
